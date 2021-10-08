@@ -40,6 +40,7 @@ These endpoints should be protected, only allowing requests accompanied by a val
 - Unit tests
 - Build a custom (not third party library) carousel
 - Improve security or add a login
+- Clean up the app structure
 - Other useful features
 
 ## Instructions
