@@ -21,7 +21,7 @@ The Express server, besides delivering whats required for React, should also pro
 
 The Express server should also expose a number of administrative endpoints. The primary responsibility of these endpoints is to enable the addition or deletion of additional animal categories. When a category is added or removed, the application should be updated to reflect this (e.g. If the `dog` category is added, the UI should display buttons for cats, dogs, and sharks. Categories are shuffled together based on active categories).
 
-These endpoints should be protected, only allowing requests accompanied by a valid authentication token. The server should also expose a `/login` route that returns an authentication token for a valid user. 
+These endpoints should be protected, only allowing requests accompanied by a valid authentication token. The starter code exposes a route, `GET /auth` that will return an auth token. This token should be used to authenticate requests. 
 
 ### Do
 
@@ -42,11 +42,14 @@ These endpoints should be protected, only allowing requests accompanied by a val
 
 ## Instructions
 
+### Pre-requisites
+- This assignment requires Docker, ensure that your machine can run the docker engine at a minimum
 ### Getting started
 
 - Fork or clone this repository
-- **ADD DOCKER INSTRUCTIONS**
-- The Postgres database will be pre-loaded with three tables. The `auth` table contains a login with hashed password. The `animal_categories` table contains a table of animal categories. The `animals` table contains animal photos.
+- Run `docker-compose build` to build your docker environment
+- Use `docker-compose up` to enable your environment. This will start your Express server and a Postgres database. Nodemon is used so we don't need to rebuild the docker image frequently.
+- The Postgres database will be pre-loaded with two tables. The `animal_categories` table contains a table of animal categories. The `animal_photos` table contains animal photo urls.
 - The Photo List below can be used to add new photos to the application using the administrative endpoints. 
 - Complete the assignment in a separate branch in your version of the repository
 
@@ -62,33 +65,33 @@ There are several ways to submit your completed assignment:
 - Zip your completed code
 - Email it to hugh.soong@rbc.com
 
-## Photo Lists (UPDATE PHOTOS)
+## Photo Lists
 
 ```json
 { 
   "dogs": [
-  "https://founded.media/hiring/photos/sharks/11261840124_dc9ac72bbe_b.jpg",
-  "https://founded.media/hiring/photos/sharks/513197047_2f861d56cb_b.jpg",
-  "https://founded.media/hiring/photos/sharks/2989909952_b59500107e_o.jpg",
-  "https://founded.media/hiring/photos/sharks/4107884442_3baf8985f2_b.jpg",
-  "https://founded.media/hiring/photos/sharks/3822452418_ffa66da89d_o.jpg",
-  "https://founded.media/hiring/photos/sharks/3800013954_20fea3a9c9_b.jpg",
-  "https://founded.media/hiring/photos/sharks/7109693941_250fc6b246_k.jpg",
-  "https://founded.media/hiring/photos/sharks/8592704407_75c3c7ff53_h.jpg",
-  "https://founded.media/hiring/photos/sharks/14730744390_cebc28aa86_k.jpg",
-  "https://founded.media/hiring/photos/sharks/4936728723_91da549b05_b.jpg",
+  "https://founded.media/hiring/photos/dogs/photo-1477884213360-7e9d7dcc1e48.jpeg",
+  "https://founded.media/hiring/photos/dogs/photo-1534361960057-19889db9621e.jpeg",
+  "https://founded.media/hiring/photos/dogs/photo-1534551767192-78b8dd45b51b.jpeg",
+  "https://founded.media/hiring/photos/dogs/photo-1543466835-00a7907e9de1.jpeg",
+  "https://founded.media/hiring/photos/dogs/photo-1548199973-03cce0bbc87b.jpeg",
+  "https://founded.media/hiring/photos/dogs/photo-1561037404-61cd46aa615b.jpeg",
+  "https://founded.media/hiring/photos/dogs/photo-1576201836106-db1758fd1c97.jpeg",
+  "https://founded.media/hiring/photos/dogs/photo-1581888227599-779811939961.jpeg",
+  "https://founded.media/hiring/photos/dogs/photo-1583511655857-d19b40a7a54e.jpeg",
+  "https://founded.media/hiring/photos/dogs/photo-1587300003388-59208cc962cb.jpeg",
  ],
  "dinosaurs": [
-  "https://founded.media/hiring/photos/cats/14157413946_fea785b4d6_k.jpg",
-  "https://founded.media/hiring/photos/cats/16175483119_bd7374d8a8_h.jpg",
-  "https://founded.media/hiring/photos/cats/13901304865_a444cf4d34_k.jpg",
-  "https://founded.media/hiring/photos/cats/8311701653_49ed80202c_k.jpg",
-  "https://founded.media/hiring/photos/cats/13336301695_3c06dd41cc_k.jpg",
-  "https://founded.media/hiring/photos/cats/38679744435_66279af67c_k.jpg",
-  "https://founded.media/hiring/photos/cats/6393395037_9cda69da1a_b.jpg",
-  "https://founded.media/hiring/photos/cats/6977309082_44102ddf51_b.jpg",
-  "https://founded.media/hiring/photos/cats/11477923503_bbdf86387d_b.jpg",
-  "https://founded.media/hiring/photos/cats/4481336172_7f464f180d_b.jpg"
+  "https://founded.media/hiring/photos/dinosaurs/photo-1519568262558-dc4b87dd85ca.jpeg",
+  "https://founded.media/hiring/photos/dinosaurs/photo-1525877442103-5ddb2089b2bb.jpeg",
+  "https://founded.media/hiring/photos/dinosaurs/photo-1559999127-b8b7f927dab8.jpeg",
+  "https://founded.media/hiring/photos/dinosaurs/photo-1560148271-00b5e5850812.jpeg",
+  "https://founded.media/hiring/photos/dinosaurs/photo-1568887786489-0662e7f51aab.jpeg",
+  "https://founded.media/hiring/photos/dinosaurs/photo-1570482606740-a0b0baa0e58d.jpeg",
+  "https://founded.media/hiring/photos/dinosaurs/photo-1579197073550-bf44b469a6fe.jpeg",
+  "https://founded.media/hiring/photos/dinosaurs/photo-1583307359900-dbefeb18e3cc.jpeg",
+  "https://founded.media/hiring/photos/dinosaurs/photo-1583307709855-88a955597645.jpeg",
+  "https://founded.media/hiring/photos/dinosaurs/photo-1606856110002-d0991ce78250.jpeg"
  ]
 }
 ```
