@@ -38,7 +38,9 @@ These endpoints should be protected, only allowing requests accompanied by a val
 ### BONUS
 
 - Unit tests
-- Add other useful features
+- Build a custom (not third party library) carousel
+- Improve security
+- Other useful features
 
 ## Instructions
 
