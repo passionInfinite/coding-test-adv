@@ -39,7 +39,7 @@ These endpoints should be protected, only allowing requests accompanied by a val
 
 - Unit tests
 - Build a custom (not third party library) carousel
-- Improve security
+- Improve security or add a login
 - Other useful features
 
 ## Instructions
