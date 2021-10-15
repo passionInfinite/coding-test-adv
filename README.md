@@ -33,28 +33,30 @@ These endpoints should be protected, only allowing requests accompanied by a val
 
 ### Don't
 
+- Use a third party library for the carousel (libraries for the minor components can be used to save time)
 - Over think the problem, there's no trick here
 
 ### BONUS
 
 - Unit tests
-- Build a custom (not third party library) carousel
-- Improve security or add a login
+- Build an admin page for the administrative API
+- Improve security of token generation in `auth.js` or add a login
 - Clean up the app structure
 - Other useful features
 
 ## Instructions
 
 ### Pre-requisites
-- This assignment requires Docker, ensure that your machine can run the docker engine at a minimum
+- This assignment requires Docker, ensure that your machine can run the docker engine at a minimum. Alternatively, the `/data` folder contains SQL scripts to seed a local Postgres database.  
+
 ### Getting started
 
-- Fork or clone this repository
-- Run `docker-compose build` to build your docker environment
+- Fork or clone this repository.
+- Run `docker-compose build` to build your docker environment.
 - Use `docker-compose up` to enable your environment. This will start your Express server and a Postgres database. Nodemon is used so we don't need to rebuild the docker image frequently.
 - The Postgres database will be pre-loaded with two tables. The `animal_categories` table contains a table of animal categories. The `animal_photos` table contains animal photo urls.
-- The Photo List below can be used to add new photos to the application using the administrative endpoints. 
-- Complete the assignment in a separate branch in your version of the repository
+- The Photo List below is an example request body to the administrative endpoint - feel free to use it to test adding new animal cantegories. 
+- Complete the assignment in a separate branch in your version of the repository.
 
 ### Submission
 There are several ways to submit your completed assignment:
