@@ -1,6 +1,6 @@
 const express = require('express');
 const expressWinston = require('express-winston');
-// const path = require('path');
+const path = require('path');
 const cookieParser = require('cookie-parser');
 
 const authRouter = require('./routes/auth');
@@ -14,8 +14,8 @@ const createApp = (logger) => {
   app.use(cookieParser());
 
   // TODO: Serve your React App using the express server
-  // app.use(express.static(path.join(__dirname, 'public')));
-  // app.use('/', ROUTE);
+  const buildPath = path.normalize(path.join(__dirname, './client/build'));
+  app.use(express.static(buildPath));
 
   app.use('/auth', authRouter);
 

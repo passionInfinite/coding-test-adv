@@ -2,8 +2,9 @@ FROM node:14
 
 WORKDIR .
 COPY package*.json /
-RUN npm install -g nodemon && npm install
 COPY . /
+RUN npm install -g nodemon && npm install
+RUN npm run build-client
 
 EXPOSE 3000
-CMD ["nodemon", "bin/www"]
+CMD ["node", "bin/www"]
