@@ -19,7 +19,7 @@ The Express server, besides delivering whats required for React, should also pro
 
 **Administrative Endpoints**
 
-The Express server should also expose a number of administrative endpoints. The primary responsibility of these endpoints is to enable the addition or deletion of additional animal categories. When a category is added or removed, the application should be updated to reflect this (e.g. If the `dog` category is added, the UI should display buttons for cats, dogs, and sharks. Categories are shuffled together based on active categories).
+The Express server should also expose a number of administrative endpoints. The primary responsibility of these endpoints is to enable the addition or deletion of additional animal categories. When a category is added or removed, the application should be updated to reflect this (e.g. If the `dog` category is added, the Core Application's UI should display buttons for cats, dogs, and sharks. Categories are shuffled together based on active categories). A UI for the Admin endpoints is NOT requlred (but can be added as a bonus!). 
 
 These endpoints should be protected, only allowing requests accompanied by a valid authentication token. The starter code exposes a route, `GET /auth` that will return an auth token. This token should be used to authenticate requests. 
 
