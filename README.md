@@ -55,7 +55,7 @@ These endpoints should be protected, only allowing requests accompanied by a val
 
 - Fork or clone this repository.
 - Run `docker-compose build` to build your docker environment.
-- Use `docker-compose up` to enable your environment. This will start your Express server and a Postgres database. *Note*: If you don't want to constant rebuild your image, you can run the client and server outside of docker for development. 
+- Use `docker-compose up` to enable your environment. This will start your Express server and a Postgres database. *Note*: If you don't want to constantly rebuild your image, you can run the client and server outside of docker for development. 
 - The Postgres database will be pre-loaded with two tables. The `animal_categories` table contains a table of animal categories. The `animal_photos` table contains animal photo urls.
 - The Photo List below is an example request body to the administrative endpoint - feel free to use it to test adding new animal cantegories. 
 - Complete the assignment in a separate branch in your version of the repository.
