@@ -54,10 +54,13 @@ These endpoints should be protected, only allowing requests accompanied by a val
 - Fork or clone this repository.
 - Run `docker-compose build` to build your docker environment.
 - Use `docker-compose up` to enable your environment. This will start your Express server and a Postgres database. Nodemon is used so we don't need to rebuild the Express server docker image frequently.
-- The Postgres docker image will be available on port `5433` with username/password of `postgres/postgres`.
 - The Postgres database will be pre-loaded with two tables. The `animal_categories` table contains a table of animal categories. The `animal_photos` table contains animal photo urls.
 - The Photo List below is an example request body to the administrative endpoint - feel free to use it to test adding new animal cantegories. 
 - Complete the assignment in a separate branch in your version of the repository.
+
+#### Hints
+- The on your local environment, the Postgres docker image will be available on port `localhost:5433` with username/password of `postgres/postgres`. Within the docker network, the database is located on `postgres:5432`. 
+- If you are having trouble setting up the docker environment, feel free to use the scripts to load a local database and develop locally. 
 
 ### Submission
 There are several ways to submit your completed assignment:
