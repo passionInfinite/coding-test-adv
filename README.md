@@ -41,13 +41,15 @@ These endpoints should be protected, only allowing requests accompanied by a val
 - Unit tests
 - Build an admin page for the administrative API
 - Improve security of token generation in `auth.js` or add a login
+- Update docker workflow with development and production compose files
 - Clean up the app structure
 - Other useful features
 
 ## Instructions
 
-### Pre-requisites
-- This assignment requires Docker, ensure that your machine can run the docker engine at a minimum. Alternatively, the `/data` folder contains SQL scripts to seed a local Postgres database.  
+### Boilerplate rundown
+- This assignment uses Docker to help pre-load a database with data. Ensure that your machine can run the docker engine at a minimum. Alternatively, the `/data` folder contains SQL scripts to seed a local Postgres database.  
+- Create React App is also initialized in the `/client` folder. The CRA build can be statically hosted on the express server. 
 
 ### Getting started
 
