@@ -3,7 +3,9 @@ const expressWinston = require('express-winston');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 
-const authRouter = require('./routes/auth');
+const authRouter = require('./src/routes/auth');
+const animalPhotosRouter = require('./src/routes/animal_photos');
+const animalCategoriesRouter = require('./src/routes/animal_categories');
 
 const createApp = (logger) => {
   const app = express();
@@ -18,6 +20,8 @@ const createApp = (logger) => {
   app.use(express.static(buildPath));
 
   app.use('/auth', authRouter);
+  app.use('/animal-photos', animalPhotosRouter);
+  app.use('/animal-categories', animalCategoriesRouter);
 
   // catch 404 and forward to error handler
   app.use((req, res) => {
