@@ -9,6 +9,11 @@ class AnimalPhotosService {
     const photos = await AnimalPhotosModel.readAllByCategoryIds(ids);
     return photos;
   }
+
+  static async create(payload) {
+    const photo = await AnimalPhotosModel.create(payload);
+    return photo;
+  }
 }
 
 module.exports = AnimalPhotosService;

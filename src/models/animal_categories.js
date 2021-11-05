@@ -9,18 +9,25 @@ class AnimalCategories {
     return records;
   }
 
-  static async create({ category }) {
-    const record = await db(this.tableName)
-      .insert({
-        category
-      })
+  static async findOrCreate(category) {
+    const categoryRecord = await db(this.tableName)
+      .where('category', category)
       .returning(['id', 'category']);
-    return record;
+
+    if (categoryRecord.length == 0) {
+      const newCategoryRecord = await db(this.tableName)
+        .insert({ category })
+        .returning(['id', 'category']);
+      return newCategoryRecord.length > 0 ? newCategoryRecord[0] : {};
+    } else {
+      return categoryRecord.length > 0 ? categoryRecord[0] : {};
+    }
   }
 
-  static async delete({ category_id }) {
+  static async delete(categoryNameOrId) {
     const deletedRecordId = await db(this.tableName)
-      .where('category_id', category_id)
+      .where('id', categoryNameOrId)
+      .orWhere('category', categoryNameOrId)
       .del(['id']);
     return deletedRecordId;
   }

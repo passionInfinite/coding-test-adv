@@ -5,6 +5,6 @@ CREATE TABLE animal_categories (
 
 CREATE TABLE animal_photos (
     id SERIAL PRIMARY KEY,
-    category_id SERIAL REFERENCES animal_categories(id),
+    category_id SERIAL REFERENCES animal_categories(id) ON DELETE CASCADE,
     photo_url text
 );
